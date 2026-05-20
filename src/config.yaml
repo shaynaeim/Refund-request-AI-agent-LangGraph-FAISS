@@ -1,0 +1,5 @@
+credentials:
+  openai:
+    api_key: enter_key
+email:
+  sender_email: enter_email
