@@ -318,7 +318,3 @@ Documentation for libraries and services used directly in this project.
 - [Gmail API Python quickstart](https://developers.google.com/gmail/api/quickstart/python) — OAuth setup for sending notifications
 
 ---
-
-## License
-
-This project is provided for educational and demonstration purposes.
