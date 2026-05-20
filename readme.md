@@ -82,7 +82,7 @@ Sample data includes ~1,000 customers, products across categories (Electronics, 
 | **Embeddings** | OpenAI Embeddings (via LangChain) |
 | **Vector database** | [FAISS](https://github.com/facebookresearch/faiss) (`faiss-cpu`) |
 | **Relational database** | SQLite + SQLAlchemy |
-| **Data processing** | Pandas, NumPy |
+| **Data processing** | Pandas |
 | **Web UI** | Streamlit |
 | **Email (optional)** | Gmail API (`google-api-python-client`) |
 | **Configuration** | YAML (`src/config.yaml`) |
@@ -287,43 +287,35 @@ Open `langgraph_simple_helper.ipynb` for a step-by-step introduction to tools, R
 
 ## Useful Links
 
-Official installation guides and documentation for the tools used in this project.
+Documentation for libraries and services used directly in this project.
 
 ### Python & environment
 
-- [Python 3.12 downloads](https://www.python.org/downloads/) — Install Python 3.12
-- [Python venv documentation](https://docs.python.org/3/library/venv.html) — Create and manage virtual environments
-- [pip documentation](https://pip.pypa.io/en/stable/) — Install packages from `requirements.txt`
+- [Python 3.12 downloads](https://www.python.org/downloads/) — Runtime used in setup instructions
+- [Python venv documentation](https://docs.python.org/3/library/venv.html) — Virtual environment setup
+- [pip documentation](https://pip.pypa.io/en/stable/) — Install dependencies from `requirements.txt`
 
 ### Agent framework & LLM
 
-- [LangGraph documentation](https://langchain-ai.github.io/langgraph/) — Graph-based agent orchestration
-- [LangGraph GitHub](https://github.com/langchain-ai/langgraph) — Source and examples
-- [langgraph-supervisor](https://github.com/langchain-ai/langgraph-supervisor) — Supervisor multi-agent pattern used in this project
-- [LangChain documentation](https://python.langchain.com/docs/introduction/) — Tools, models, and integrations
-- [LangChain OpenAI integration](https://python.langchain.com/docs/integrations/chat/openai/) — Chat models and embeddings
-- [OpenAI API platform](https://platform.openai.com/) — API keys and usage dashboard
-- [OpenAI API documentation](https://platform.openai.com/docs/overview) — Models, authentication, and rate limits
+- [LangGraph documentation](https://langchain-ai.github.io/langgraph/) — Agent graph used in `src/agents.py`
+- [langgraph-supervisor](https://github.com/langchain-ai/langgraph-supervisor) — Supervisor pattern in `src/agents.py`
+- [LangChain documentation](https://python.langchain.com/docs/introduction/) — Tools and model integrations across `src/`
+- [LangChain OpenAI integration](https://python.langchain.com/docs/integrations/chat/openai/) — Chat model in `src/model.py`
+- [LangChain FAISS integration](https://python.langchain.com/docs/integrations/vectorstores/faiss/) — Vector store in `src/vector_db_creation.py`
+- [OpenAI API documentation](https://platform.openai.com/docs/overview) — API keys, chat completions, and embeddings
 
-### Vector search & data
+### Data & UI
 
-- [FAISS GitHub](https://github.com/facebookresearch/faiss) — Vector similarity search library
-- [LangChain FAISS integration](https://python.langchain.com/docs/integrations/vectorstores/faiss/) — Building and querying FAISS indexes
-- [SQLAlchemy documentation](https://docs.sqlalchemy.org/) — ORM used for the SQLite database
-- [Pandas documentation](https://pandas.pydata.org/docs/) — CSV loading and data processing
-
-### Web UI & configuration
-
-- [Streamlit documentation](https://docs.streamlit.io/) — Chat UI framework
-- [Streamlit installation](https://docs.streamlit.io/get-started/installation) — Run the chatbot locally
-- [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) — YAML config file format
+- [FAISS GitHub](https://github.com/facebookresearch/faiss) — Vector index backend (`faiss-cpu`)
+- [SQLAlchemy documentation](https://docs.sqlalchemy.org/) — SQLite ORM in `database_creation.py` and `src/db_tools.py`
+- [Pandas documentation](https://pandas.pydata.org/docs/) — CSV loading in `database_creation.py`
+- [Streamlit documentation](https://docs.streamlit.io/) — Chat UI in `chatbot_app.py`
+- [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) — Config file in `src/config.yaml`
 
 ### Email integration (optional)
 
-- [Google Cloud Console](https://console.cloud.google.com/) — Create a project and enable APIs
-- [Gmail API overview](https://developers.google.com/gmail/api/guides) — Send mail via OAuth
-- [Gmail API Python quickstart](https://developers.google.com/gmail/api/quickstart/python) — OAuth setup and first send
-- [google-api-python-client](https://github.com/googleapis/google-api-python-client) — Official Google API client for Python
+- [Google Cloud Console](https://console.cloud.google.com/) — Enable Gmail API for `src/email_tools.py`
+- [Gmail API Python quickstart](https://developers.google.com/gmail/api/quickstart/python) — OAuth setup for sending notifications
 
 ---
 
